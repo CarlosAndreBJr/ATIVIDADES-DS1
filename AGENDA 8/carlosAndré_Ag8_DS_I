@@ -1,0 +1,35 @@
+# Inicialização dos contadores solicitados
+excelente = 0
+ruim = 0
+
+# Estrutura de repetição para os 50 entrevistados
+for i in range(1, 11):
+    print(f"\n--- Entrevistado nº {i} de 50 ---")
+    
+    # Coleta de dados (idade como texto evita erros se digitarem letras)
+    nome = input("Digite o nome: ")
+    idade = input("Digite a idade: ")
+    
+    # Validação da opinião (só aceita 1, 2 ou 3)
+    opiniao = ""
+    while opiniao not in ["1", "2", "3"]:
+        print("Opinião sobre o atendimento:")
+        print("1: EXCELENTE | 2: BOM | 3: RUIM")
+        opiniao = input("Digite a opção (1, 2 ou 3): ").strip()
+        
+        if opiniao not in ["1", "2", "3"]:
+            print("Opção inválida! Tente novamente.")
+    
+    # Contabilização das respostas
+    if opiniao == "1":
+        excelente += 1
+    elif opiniao == "3":
+        ruim += 1
+
+# Exibição do resultado final após os 50 entrevistados
+print("\n" + "="*30)
+print("      RESULTADO DA PESQUISA     ")
+print("="*30)
+print(f"a) Quantidade de respostas 'EXCELENTE': {excelente}")
+print(f"b) Quantidade de respostas 'RUIM': {ruim}")
+print("="*30)
